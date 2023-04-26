@@ -9,7 +9,7 @@
 #include "data_decode.h"
 #include "secrets.h"
 
-// Define DEBUG_SAMPLER to log data packets to seriall
+// Define DEBUG_SAMPLER to log data packets to serial
 // Instead of normal operation
 
 
