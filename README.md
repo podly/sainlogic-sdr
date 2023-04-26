@@ -1,7 +1,8 @@
 # Sainlogic Weather Sensor Reverse Engineering Project
 
-Firmware for ESP in firmware
-need to create a file secrets.h with
+Firmware for ESP in 'firmware'
+
+file secrets.h needs to be created with:
 
 #define SECRET_WIFI_SSID "ssid"
 #define SECRET_WIFI_PASSWORD "pass"
