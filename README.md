@@ -1,5 +1,15 @@
 # Sainlogic Weather Sensor Reverse Engineering Project
 
+Firmware for ESP in firmware
+need to create a file secrets.h with
+
+#define SECRET_WIFI_SSID "ssid"
+#define SECRET_WIFI_PASSWORD "pass"
+#define SECRET_MQTT_SERVER "192.168.0.1"
+#define SECRET_MQTT_USER "mqttuser"
+#define SECRET_MQTT_PASS "mqttpass"
+#define MQTT_CLIENTID "mqtt-clientid"
+
 This repo has the code for my very extended reverse engineering effort for the Sainlogic WS-0835 weather station.
 
 For a more detailed breakdown of this project, see the blog post <https://www.robopenguins.com/weather-station/>
