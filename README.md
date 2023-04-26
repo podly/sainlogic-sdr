@@ -1,21 +1,16 @@
 # Sainlogic Weather Sensor Reverse Engineering Project
 
-Firmware for ESP in 'firmware'
+Code for ESP->MQTT is in 'firmware'
 
 
 file secrets.h needs to be created with:
 
 
-#define SECRET_WIFI_SSID "ssid"
-
-#define SECRET_WIFI_PASSWORD "pass"
-
-#define SECRET_MQTT_SERVER "192.168.0.1"
-
-#define SECRET_MQTT_USER "mqttuser"
-
-#define SECRET_MQTT_PASS "mqttpass"
-
+#define SECRET_WIFI_SSID "ssid"\
+#define SECRET_WIFI_PASSWORD "pass"\
+#define SECRET_MQTT_SERVER "192.168.0.1"\
+#define SECRET_MQTT_USER "mqttuser"\
+#define SECRET_MQTT_PASS "mqttpass"\
 #define MQTT_CLIENTID "mqtt-clientid"
 
 
