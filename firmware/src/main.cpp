@@ -30,7 +30,10 @@
 #define MAX_SAMPLES 16
 
 // MQTT Broker to connect to
-const char* mqtt_server = "192.168.1.110";
+const char *mqtt_server = SECRET_MQTT_SERVER;
+const char *mqtt_user = SECRET_MQTT_USER;
+const char *mqtt_pass = SECRET_MQTT_PASS;
+const char *mqtt_clientid = MQTT_CLIENTID;
 
 WiFiClient wifi_client;
 PubSubClient client(wifi_client);
@@ -46,6 +49,8 @@ void setup_wifi() {
 
   delay(10);
   // We start by connecting to a WiFi network
+  const char *ssid = SECRET_WIFI_SSID;
+  const char *password = SECRET_WIFI_PASSWORD;
   Serial.println();
   Serial.print("Connecting to ");
   Serial.println(ssid);
@@ -53,6 +58,8 @@ void setup_wifi() {
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
 
+  Serial.println("While ");
+  Serial.println(password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
@@ -76,11 +83,8 @@ void reconnect() {
   // Loop until we're reconnected
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...1");
-    // Create a random client ID
-    String clientId = "ESP8266Client-";
-    clientId += String(random(0xffff), HEX);
     // Attempt to connect
-    if (client.connect(clientId.c_str())) {
+    if (client.connect(mqtt_clientid, mqtt_user, mqtt_pass)) {
       Serial.println("connected");
     } else {
       Serial.print("failed, rc=");
